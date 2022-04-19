@@ -16,8 +16,10 @@ namespace ImageEnigma
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CredentialsCheck.CredentialsForm());
-            Application.Run(new ImageEnigmaForm());
+            CredentialsForm creds = new CredentialsForm();
+            Application.Run(creds);
+            if (creds.exitValue)
+                Application.Run(new ImageEnigmaForm());
         }
     }
 }
